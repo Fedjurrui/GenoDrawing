@@ -1,4 +1,4 @@
-#GenoDrawing
+# GenoDrawing
 
 This repository is intended to replicate and show the results of the paper:
 https://spj.science.org/doi/10.34133/plantphenomics.0113
@@ -27,7 +27,7 @@ Open using [Visual Studio Code](https://code.visualstudio.com/) the folder and o
 ### Recomendations
 It is highly encouraged to use a GPU. Inference times are greatly improved doing so eventhough it is not strictly required and the code has been prepared to run on CPU.
 
-##Abstract
+## Abstract
 
 ### GenoDrawing: An autoencoder framework for image prediction from SNP markers
 
