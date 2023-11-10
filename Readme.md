@@ -1,4 +1,35 @@
-# GenoDrawing: An autoencoder framework for image prediction from SNP markers
+#GenoDrawing
+
+This repository is intended to replicate and show the results of the paper:
+https://spj.science.org/doi/10.34133/plantphenomics.0113
+
+### Usage
+Clone the repository with:
+```powershell
+git clone https://github.com/Fedjurrui/GenoDrawing.git
+```
+Move inside the folder:
+```powershell
+cd GenoDrawing
+```
+Then install the requirements:
+```powershell
+pip install -r requirements.txt
+```
+Get the weights for the autoencoder from:
+- Decoder: https://huggingface.co/aranzana-lab/genodrawing/resolve/main/decoder_7_2_2023_15h.h5?download=true
+- Encoder: https://huggingface.co/aranzana-lab/genodrawing/resolve/main/encoder_7_2_2023_15h.h5?download=true
+
+Place the both files at: `GenoDrawing/AE_model/64_encoders_35_epochs/model_data_7_2_2023_15h/`
+
+Open using [Visual Studio Code](https://code.visualstudio.com/) the folder and open the autoencoder notebook file. Be mindful that it is a jupyter notebook, so if you have not worked with notebooks you might find the [documentation on jupyter notebook in VSCode](https://code.visualstudio.com/docs/datascience/jupyter-notebooks) usefull. From there you can open the GenoDrawing file and last the GenoDrawing_stats.
+
+### Recomendations
+It is highly encouraged to use a GPU. Inference times are greatly improved doing so eventhough it is not strictly required and the code has been prepared to run on CPU.
+
+##Abstract
+
+### GenoDrawing: An autoencoder framework for image prediction from SNP markers
 
 Advancements in genome sequencing have facilitated whole genome characterization of numerous
 plant species, providing an abundance of genotypic data for genomic analysis. Genomic selection
@@ -17,6 +48,7 @@ proposed GenoDrawing method is a practical framework for exploring genomic predi
 tree phenotyping, particularly beneficial for small to medium breeding companies to predict economically
 significant heritable traits. Although GenoDrawing has limitations, it sets the groundwork
 for future research in image prediction from genomic markers. 
+
 
 ![GenoDrawing_example](Figures/GenoDrawing_examples.png)
 
