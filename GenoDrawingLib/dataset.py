@@ -4,6 +4,7 @@ from PIL import Image
 from torch.utils.data import Dataset
 from torchvision.transforms import ToTensor
 from tqdm import notebook
+from pathlib import Path
 class snps_to_embd_dataset(Dataset):
     def __init__(self,folders,snps,encoder,decoder,device):
         self.images = []
@@ -13,7 +14,8 @@ class snps_to_embd_dataset(Dataset):
         encoder.to(device)
         decoder.to(device)
         for dir in notebook.tqdm(folders):
-            name = re.sub(".*\\\\","",dir)
+            name = Path(dir).name
+            print(name)
             files = [os.path.join(dir,e) for e in os.listdir(dir)]
             embd = []
             images = [ToTensor()(Image.open(e)) for e in files]
@@ -27,6 +29,7 @@ class snps_to_embd_dataset(Dataset):
             decoded = decoder(embd)
             self.embd.append(embd[0].detach().cpu())
             self.images.append(decoded.detach().cpu()[0])
+            print(snps.index)
             self.snps.append(snps.loc[name,:].values/2)
             self.munq.append(name)
 
